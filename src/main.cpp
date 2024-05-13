@@ -61,7 +61,7 @@ void setup()
     Serial.println();
     Serial.println();
     Serial.println();
-
+	logger.info("Hello world from aoki!");
     logger.info("SlimeVR v" FIRMWARE_VERSION " starting up...");
 
     statusManager.setStatus(SlimeVR::Status::LOADING, true);
