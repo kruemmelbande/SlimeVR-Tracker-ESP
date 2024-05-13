@@ -244,16 +244,11 @@ void BMI160Sensor::motionLoop() {
         getRemappedAcceleration(&aX, &aY, &aZ);
 
 
-			// Calculate the maximum length needed for the string
-			int maxLength = snprintf(NULL, 0, "%d %d %d %d %d %d", rX, rY, rZ, aX, aY, aZ);
 
-			// Create a character array to hold the concatenated string
-			char input[maxLength + 1]; // +1 for the null terminator
-
-			// Convert integers to string and concatenate them
-			snprintf(input, maxLength + 1, "%d %d %d %d %d %d", rX, rY, rZ, aX, aY, aZ);
-
-		m_Logger.info(input);
+    int maxLength = snprintf(NULL, 0, "%d %d %d %d %d %d", rX, rY, rZ, aX, aY, aZ);
+    char input[maxLength + 1];
+    snprintf(input, maxLength + 1, "%d %d %d %d %d %d", rX, rY, rZ, aX, aY, aZ);
+	m_Logger.info(input);
         //networkConnection.sendInspectionRawIMUData(sensorId, rX, rY, rZ, 255, aX, aY, aZ, 255, 0, 0, 0, 255);
     }
     #endif
