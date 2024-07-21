@@ -243,13 +243,7 @@ void BMI160Sensor::motionLoop() {
         getRemappedRotation(&rX, &rY, &rZ);
         getRemappedAcceleration(&aX, &aY, &aZ);
 
-
-
-    int maxLength = snprintf(NULL, 0, "%d %d %d %d %d %d", rX, rY, rZ, aX, aY, aZ);
-    char input[maxLength + 1];
-    snprintf(input, maxLength + 1, "%d %d %d %d %d %d", rX, rY, rZ, aX, aY, aZ);
-	m_Logger.info(input);
-        //networkConnection.sendInspectionRawIMUData(sensorId, rX, rY, rZ, 255, aX, aY, aZ, 255, 0, 0, 0, 255);
+        networkConnection.sendInspectionRawIMUData(sensorId, rX, rY, rZ, 255, aX, aY, aZ, 255, 0, 0, 0, 255);
     }
     #endif
 

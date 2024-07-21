@@ -88,7 +88,7 @@
 
 // Send inspection packets over the network to a profiler
 // Not recommended for production
-#define ENABLE_INSPECTION true
+#define ENABLE_INSPECTION false
 
 #define FIRMWARE_BUILD_NUMBER 17
 #define FIRMWARE_VERSION "0.4.0"
